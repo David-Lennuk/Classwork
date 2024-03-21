@@ -1,180 +1,180 @@
 from random import *
 from re import *
-#nimed=["Mati","Meelis","Kati","Mati"]
-#while True:
-#    print("-------------------")
-#    v=input("N-näita andmed\nL-lisada andmeid\nK-andmete kustutamine\nH-andmete haldus\nH-andmete haldus\nD-Vanus")
-#    if v=="N":
-#        v=input("Kas Juhuslik(j) nimi või loetelu(t)?")
-#        if v=="t":
-#            print (nimed)
-#        elif v=="j":
-#            print(choice(nimed))
-#    elif v=="L":
-#        v=input("Kas nimikirja lõppu(l) või positsioonile(p)")
-#        if v=="l":
-#            nimi=input("Sisesta nimi: ")
-#            nimed.append(nimi)
-#        elif v=="p":
-#            nimi=input("Sisesta nimi: ")
-#            ind=int(input("Mis kohale: "))
-#            nimed.insert(ind-1,nimi)
-#    elif v=="K":
-#        v==input("Kas nimi järgi(n), indeksi järgi(i) või kõik nimed(K)")
-#        if v=="i":
-#            ind=int(input("Sisesta indeks: "))
-#            nimed.pop(ind-1)
-#        elif v=="K":
-#            nimed.clear()
-#        elif v=="n":
-#            nimi=input("Sisesta nimi: ")
-#            mitu=nimed.count(nimi)
-#            if mitu>0:
-#                if mitu>1:
-#                    ind= -1
-#                    indlist=[]                   
-#                    for e in nimed:
-#                        ind +=1
-#                        if e == nimi:
-#                            indlist.append(ind)
-#                    print(indlist)
-#                    v= int(input("Mis indeks?"))
-#                    nimed.pop(v)
-#                else:
-#                    nimed.remove(nimi)
-#            else:
-#                print(f"{nimi} ei ole loetelus")
-#    elif v=="H":
-#        v=input("Sorteerimine(s), kopeerimine(k) või ümber pööramine(p)")
-#        if v=="s":
-#            v=int(input("A-z?(1) või Z-a(2)"))
-#            if v==1:
-#                nimed.sort()
-#            elif v==2:
-#                nimed.sort(reverse=True)
-#            nimed.sort()
-#        elif v=="K":
-#            nimed.copy()
-#        elif v=="p":
-#            nimed.reverse()
-#    elif v=="D":
-#        aeg = [25, 30, 40, 20, 35]
-#        v=input("Max aeg(b), min aeg(f), sum aeg(t),len aeg(z) ")
-#        if v=="b":
-#            max_aeg = max(aeg)
-#            print(f"Maximum aeg: {max_aeg}")
-#        elif v=="f":
-#            min_aeg = min(aeg)
-#            print(f"Minimum aeg: {min_aeg}")
-#        elif v=="t":
-#            total_aeg = sum(aeg)
-#            print(f"Total aeg: {total_aeg}")
-#        elif v=="z":
-#            average_aeg = total_aeg / len(aeg)
-#            print(f"Average aeg: {average_aeg}")            
+nimed=["Mati","Meelis","Kati","Mati"]
+while True:
+    print("-------------------")
+    v=input("N-näita andmed\nL-lisada andmeid\nK-andmete kustutamine\nH-andmete haldus\nH-andmete haldus\nD-Vanus")
+    if v=="N":
+        v=input("Kas Juhuslik(j) nimi või loetelu(t)?")
+        if v=="t":
+            print (nimed)
+        elif v=="j":
+            print(choice(nimed))
+    elif v=="L":
+        v=input("Kas nimikirja lõppu(l) või positsioonile(p)")
+        if v=="l":
+            nimi=input("Sisesta nimi: ")
+            nimed.append(nimi)
+        elif v=="p":
+            nimi=input("Sisesta nimi: ")
+            ind=int(input("Mis kohale: "))
+            nimed.insert(ind-1,nimi)
+    elif v=="K":
+        v==input("Kas nimi järgi(n), indeksi järgi(i) või kõik nimed(K)")
+        if v=="i":
+            ind=int(input("Sisesta indeks: "))
+            nimed.pop(ind-1)
+        elif v=="K":
+            nimed.clear()
+        elif v=="n":
+            nimi=input("Sisesta nimi: ")
+            mitu=nimed.count(nimi)
+            if mitu>0:
+                if mitu>1:
+                    ind= -1
+                    indlist=[]                   
+                    for e in nimed:
+                        ind +=1
+                        if e == nimi:
+                            indlist.append(ind)
+                    print(indlist)
+                    v= int(input("Mis indeks?"))
+                    nimed.pop(v)
+                else:
+                    nimed.remove(nimi)
+            else:
+                print(f"{nimi} ei ole loetelus")
+    elif v=="H":
+        v=input("Sorteerimine(s), kopeerimine(k) või ümber pööramine(p)")
+        if v=="s":
+            v=int(input("A-z?(1) või Z-a(2)"))
+            if v==1:
+                nimed.sort()
+            elif v==2:
+                nimed.sort(reverse=True)
+            nimed.sort()
+        elif v=="K":
+            nimed.copy()
+        elif v=="p":
+            nimed.reverse()
+    elif v=="D":
+        aeg = [25, 30, 40, 20, 35]
+        v=input("Max aeg(b), min aeg(f), sum aeg(t),len aeg(z) ")
+        if v=="b":
+            max_aeg = max(aeg)
+            print(f"Maximum aeg: {max_aeg}")
+        elif v=="f":
+            min_aeg = min(aeg)
+            print(f"Minimum aeg: {min_aeg}")
+        elif v=="t":
+            total_aeg = sum(aeg)
+            print(f"Total aeg: {total_aeg}")
+        elif v=="z":
+            average_aeg = total_aeg / len(aeg)
+            print(f"Average aeg: {average_aeg}")            
 
 
 
-##2.3
-#vanused=[]
-#for i in range(5):
-#    vaanus=int(input("Sisesta vanus: "))
-#    vanused.append(vanus) #
-#maksimum=max(vanused)
-#minimum=min(vanused)
-#summa=sum(vanused)
-#keskmine=summa/len(vanused)
-#print("maksimum=",max(vanused),"\nminimum=",min(vanused),"\nsumma=",sum(vanused),"\nkeskmine=",summa/len(vanused))
+#2.3
+vanused=[]
+for i in range(5):
+    vaanus=int(input("Sisesta vanus: "))
+    vanused.append(vanus) #
+maksimum=max(vanused)
+minimum=min(vanused)
+summa=sum(vanused)
+keskmine=summa/len(vanused)
+print("maksimum=",max(vanused),"\nminimum=",min(vanused),"\nsumma=",sum(vanused),"\nkeskmine=",summa/len(vanused))
 
-##Kuva ekranile nimi koos vanusega
-#for i in range(5):
-#    print(nimed[i],"on", vanused[i],"aastat vana")
+#Kuva ekranile nimi koos vanusega
+for i in range(5):
+    print(nimed[i],"on", vanused[i],"aastat vana")
 
 
-##3 Tärnid
-#from random import *
-#arvud=[]
-#N=int(input("Mitu rida joonistame?"))
-#S=input("Sisesta sümbol: ")
-##loendi täitmine
-#for p in range(N):
-#    arvud.append(randint(1,100))
-##diagrammi loomine
-#for p in range(N):
-#    print(arvud[p]*S)
+#3 Tärnid
+from random import *
+arvud=[]
+N=int(input("Mitu rida joonistame?"))
+S=input("Sisesta sümbol: ")
+#loendi täitmine
+for p in range(N):
+    arvud.append(randint(1,100))
+#diagrammi loomine
+for p in range(N):
+    print(arvud[p]*S)
 
 
 #4 Postiindex
-#linnad=["Tallinn" "Narva, Narva-Jõesuu" "Kohtla-Järve" "Ida-Virumaa, Lääne-Virumaa, Jõgevamaa" "Tartu linn" "Tartumaa, Põlvamaa, Võrumaa, Valgamaa" "Viljandimaa, Järvamaa, Harjumaa,Raplamaa" "Pärnumaa Läänemaa" "Hiiumaa, Saaremaa"]
-#while True:    
-#    while True:
-#        try:
-#           indeks=int(input("Sisesta viienumbrilinr indeks: "))
-#           #if 10000<=indeks<=99999:
-#           indeks_elemendide_arv=len(str(indeks))
-#           if indeks_elemendide_arv==5:
-#                print("5numbriline indeks ")
-#                break
-#           else:
-#               print("On vaja 5numbriline arv(indeks)")
-#        except:
-#                print("Vale andmetüüp!")
-#    arv1=indeks//10000
-#    print(arv1)
-#    #symbolid=list(str(indeks))
-#    print(f"Sa elad piirkonnas {linnad[arv1-1]}")
+linnad=["Tallinn" "Narva, Narva-Jõesuu" "Kohtla-Järve" "Ida-Virumaa, Lääne-Virumaa, Jõgevamaa" "Tartu linn" "Tartumaa, Põlvamaa, Võrumaa, Valgamaa" "Viljandimaa, Järvamaa, Harjumaa,Raplamaa" "Pärnumaa Läänemaa" "Hiiumaa, Saaremaa"]
+while True:    
+    while True:
+        try:
+           indeks=int(input("Sisesta viienumbrilinr indeks: "))
+           #if 10000<=indeks<=99999:
+           indeks_elemendide_arv=len(str(indeks))
+           if indeks_elemendide_arv==5:
+                print("5numbriline indeks ")
+                break
+           else:
+               print("On vaja 5numbriline arv(indeks)")
+        except:
+                print("Vale andmetüüp!")
+    arv1=indeks//10000
+    print(arv1)
+    #symbolid=list(str(indeks))
+    print(f"Sa elad piirkonnas {linnad[arv1-1]}")
 
 
-##5 Vahetus
-#from string import *
-#rida=[]
-#N=randint(2,25)
-#for i in range(N):
-#    rida.apped(choice(ascii_uppercase))
-#print(rida)
-#kogus=int(input("Mitu elmendi vahetama oma vahel "))
-#if len(rida)//22>=kogus:
-#    for i in range(kogus):
-#        a=rida[i]
-#        rida[i]=rida[len(rida)-i-1]
-#        rida[len(rida)-1-i]=a
-#print(rida)
+#5 Vahetus
+from string import *
+rida=[]
+N=randint(2,25)
+for i in range(N):
+    rida.apped(choice(ascii_uppercase))
+print(rida)
+kogus=int(input("Mitu elmendi vahetama oma vahel "))
+if len(rida)//22>=kogus:
+    for i in range(kogus):
+        a=rida[i]
+        rida[i]=rida[len(rida)-i-1]
+        rida[len(rida)-1-i]=a
+print(rida)
 
 
-##6: Бесполезные числа
-#numbers = input("Введите числа через пробел: ").split()
-#numbers = list(map(int, numbers))
-#if not numbers:
-#    print("Ошибка: список чисел пуст.")
-#else:
-#    max_number = max(numbers)
-#    numbers[numbers.index(max_number)] = max_number / len(numbers)
-#    print("Список после замены:", numbers)
+#6: Бесполезные числа
+numbers = input("Введите числа через пробел: ").split()
+numbers = list(map(int, numbers))
+if not numbers:
+    print("Ошибка: список чисел пуст.")
+else:
+    max_number = max(numbers)
+    numbers[numbers.index(max_number)] = max_number / len(numbers)
+    print("Список после замены:", numbers)
 
 #6.1
-#nimekirja1=[]
-#nimekirja=[]
-#n=int(input("Nimekirja suurus:"))
-#for i in range(n):
-#    arv=randint(10,100)
-#    nimekirja1.append(arv)
-#    nimekirja.append(arv)
-#maksimum=nimekirja[0]
-#for arv in nimekirja:
-#    if arv>maksimum:
-#        maksimum=arv
-#        vajavarv=maksimum/len(nimekirja)
-#for i in range(len(nimekirja)):
-#    if nimekirja[i]==maksimum:
-#        nimekirja[i]=vajavarv 
-#print(nimekirja1)
-#print(nimekirja)
+nimekirja1=[]
+nimekirja=[]
+n=int(input("Nimekirja suurus:"))
+for i in range(n):
+    arv=randint(10,100)
+    nimekirja1.append(arv)
+    nimekirja.append(arv)
+maksimum=nimekirja[0]
+for arv in nimekirja:
+    if arv>maksimum:
+        maksimum=arv
+        vajavarv=maksimum/len(nimekirja)
+for i in range(len(nimekirja)):
+    if nimekirja[i]==maksimum:
+        nimekirja[i]=vajavarv 
+print(nimekirja1)
+print(nimekirja)
 
 
 
 #9: Nimi kontroll
 
-#try:
+try:
     nimi=input("Sisestage oma nimi: ")
     if nimi.isalpha():
        print("Tere, {}!".format(nimi.capitalize()))
@@ -200,7 +200,7 @@ except Exception as e:
 
 
 #12
-#import random
+import random
 
 try:
     # Koostage loend 10 juhuslikust numbrist 1 kuni 100
@@ -217,7 +217,7 @@ except Exception as e:
 
 
 ##13 Arva sõna ära
-#import random
+import random
 
 ## Список слов
 
