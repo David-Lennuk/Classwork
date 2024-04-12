@@ -1,3 +1,5 @@
+from msilib import RadioButtonGroup
+from msilib.schema import RadioButton
 from tkinter import *
 from tkinter import *
 from math import *
@@ -7,6 +9,7 @@ global D,t,graf
 D = -1
 t = "Lahendusi pole"
 graf = False
+
 def solve():
     ent1_=float(ent1.get())
     ent2_=float(ent2.get())
@@ -46,6 +49,9 @@ def graafik(graf:bool, D:float):
         text = f"Graafikut ei saa kuidagi luua"
     lbl5.configure(text = f"D = {D}\n{t}\n{text}")
 
+def kala():
+
+
 
 
 
@@ -53,9 +59,11 @@ def graafik(graf:bool, D:float):
 
 aken=Tk()
 aken.title("Решение квадратного уравнения") 
-aken.geometry("600x200")
+aken.geometry("600x400")
 aken.title("Tkinteri kasutamine")
 tekst = "Pealkiri\n"
+
+var=IntVar()
 
 lbl=Label(aken, text = "Решение квадратного уравнения",font = "Arial 16",bg = "#f0e4c7")
 ent1=Entry(aken, font = "Arial 20",fg = "#1c4226",bg = "#f0e4c7",width = 4) 
@@ -68,17 +76,19 @@ lbl5=Label(aken, text = "Решено",font = "Arial 16",bg = "#c7d3f0")
 btn1=Button(aken, text = "Решать",font = "Arial 12",fg = "#1c4226",bg = "#aee8be", width = 14, height = 3, relief = RAISED, command =lambda: solve())
 btn2=Button(aken, text = "graafik", font = "Arial 12", bg ="#aee8be", width = 14, height = 3, relief = RAISED, command = lambda :graafik(graf, D))
 btn3=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = "#1c4226",bg = "#aee8be",width = 14, height = 3, relief = RAISED)
+btn4=RadioButton(aken, text = "kala", font = "Arial 12", variable=var, value=1, command=)
+btn5=RadioButton(aken, text = "liblikas", font = "Arial 12", variable=var, value=2, command=)
+btn6=RadioButton(aken, text = "kilpkon", font = "Arial 12", variable=var, value=3, command=)
 
 lbl5.pack(side = BOTTOM)
+btn3.pack(side = BOTTOM)
 lbl.pack()
 ent1.pack(side = LEFT)
 lbl2.pack(side = LEFT)
-
 ent2.pack(side = LEFT)
 lbl3.pack(side = LEFT)
 ent3.pack(side = LEFT)
 lbl4.pack(side = LEFT)
 btn1.pack(side = LEFT)
 btn2.pack(side = LEFT)
-btn3.pack(side = LEFT)
 aken.mainloop()
