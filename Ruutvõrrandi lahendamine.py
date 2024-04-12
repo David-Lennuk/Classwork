@@ -1,33 +1,31 @@
 from tkinter import *
-from tkinter import messagebox as mb
-import math
+from tkinter import *
+from math import *
 import matplotlib.pyplot  as plt
 import numpy as np
 global D,t,graf
-
-def lahenda_virand(event):
-    ent1_ = float(ent1.get())
-    ent2_ = float(ent2.get())
-    ent3_ = float(ent3.get())
-    if not (ent1=="" or ent2=="" or ent3==""):
-        D=(int(ent2)**2)-(4*int(ent1)*int(ent3))
-        if D>0:
-            x1_ = round((-1*ent2_+math.sqrt(D))/(2*ent1_),2)
-            x2_ = round((-1*ent2_-math.sqrt(D))/(2*ent1_),2)
-            t = f"X1 = {x1_}, \nX2 = {x2_}"
-            graf = True
-        elif D == 0:
-            x1_ = round((-1*ent2_)/(2*ent1_),2)
-            t = f"X1 = x1_"
-            graf = True
-        else:
-            t = "Lahendusi"
-            graf = False
-            lbl5.configure(text = f"D  = {D}\n{t}")
-    else:
-        mb.showwarning("Tähelepanu!","On vaja sisestada numbreid!")
+D = -1
+t = "Lahendusi pole"
+graf = False
+def solve():
+    ent1_=float(ent1.get())
+    ent2_=float(ent2.get())
+    ent3_=float(ent3.get())
+    D = ent2_*ent2_-4*ent1_*ent3_
+    if D>0:
+        x1_ = round((-1*ent2_+sqrt(D))/(2*ent1_),2)
+        x2_ = round((-1*ent2_-sqrt(D))/(2*ent1_),2)
+        t = f"X1 = {x1_}, \nX2 = {x2_}"
+        graf = True
+    elif D ==0:
+        x1_ = round((-1*ent2_)/(2*ent1_),2)
+        t = f"X1 = {x1_}"
+        graf = True
+    lbl5.configure(text = f"D = {D}\n{t}")
+    return D,graf
 
 def graafik(graf:bool, D:float):
+    D,graf=solve()
     if graf == True:
         ent1_ = float(ent1.get())
         ent2_ = float(ent2.get())
@@ -38,10 +36,11 @@ def graafik(graf:bool, D:float):
         y1 = ent1_*x1*x1+ent2_*x1+ent3_
         fig = plt.figure()
         plt.plot(x1, y1, 'r-d')
+        plt.title("Ruutvõrrand")
         plt.ylabel('y')
         plt.xlabel('x')
         plt.grid(True)
-        plt.show
+        plt.show()
         text = f"Porabula tipp ({x0}, {y0})"
     else:
         text = f"Graafikut ei saa kuidagi luua"
@@ -66,10 +65,9 @@ lbl3=Label(aken, text = "x+",font = "Arial 16")
 ent3=Entry(aken, font = "Arial 20",fg = "#1c4226",bg = "#f0e4c7",width = 4) 
 lbl4=Label(aken, text = "=0",font = "Arial 16")
 lbl5=Label(aken, text = "Решено",font = "Arial 16",bg = "#c7d3f0")
-btn=Button(aken, text = "Решать",font = "Arial 12",fg = "#1c4226",bg = "#aee8be",width = 14, heigh = 3,relief = RAISED)
-
-
-
+btn1=Button(aken, text = "Решать",font = "Arial 12",fg = "#1c4226",bg = "#aee8be", width = 14, height = 3, relief = RAISED, command =lambda: solve())
+btn2=Button(aken, text = "graafik", font = "Arial 12", bg ="#aee8be", width = 14, height = 3, relief = RAISED, command = lambda :graafik(graf, D))
+btn3=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = "#1c4226",bg = "#aee8be",width = 14, height = 3, relief = RAISED)
 
 lbl5.pack(side = BOTTOM)
 lbl.pack()
@@ -80,5 +78,7 @@ ent2.pack(side = LEFT)
 lbl3.pack(side = LEFT)
 ent3.pack(side = LEFT)
 lbl4.pack(side = LEFT)
-btn.pack(side = LEFT)
+btn1.pack(side = LEFT)
+btn2.pack(side = LEFT)
+btn3.pack(side = LEFT)
 aken.mainloop()
