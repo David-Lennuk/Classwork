@@ -1,11 +1,9 @@
 from msilib import RadioButtonGroup
 from msilib.schema import RadioButton
 from tkinter import *
-from tkinter import *
 from math import *
-import numpy
 import matplotlib.pyplot  as plt
-import numpy as np
+import numpy
 global D,t,graf,K
 D = -1
 t = "Lahendusi pole"
@@ -13,8 +11,8 @@ graf = False
 
 x=500
 y=500
-bg="#000000"
-fg="#00FF00"
+bg="#aee8be"
+fg="#1c4226"
 height=0
 roundTo=2
 step=5
@@ -46,7 +44,7 @@ def graafik(graf:bool, D:float):
         ent3_ = float(ent3.get())
         x0 = (-ent2_)/(2*ent1_)
         y0 = ent1_*x0*x0+ent2_*x0+ent3_
-        x1 = np.arange(x0-10, x0+10, 0.5)
+        x1 = numpy.arange(x0-10, x0+10, 0.5)
         y1 = ent1_*x1*x1+ent2_*x1+ent3_
         fig = plt.figure()
         plt.plot(x1, y1, 'r-d')
@@ -184,53 +182,19 @@ def extend():
     global K, whaleRB, frogRB, butterflyRB, solve2B, choice
     if K==True:
         K=not K
-        extendB.config(text="Kahanda aken")
+        btn4.config(text="Kahanda aken")
         choice=IntVar()
-        whaleRB=Radiobutton(aken,
-            text="Vaal",
-            bg=bg,
-            fg=fg,
-            font="Arial 24",
-            height=height,
-            width=x,
-            variable=choice,
-            value=1,
-            command=choice)
-        frogRB=Radiobutton(aken,
-            text="Konn",
-            bg=bg,
-            fg=fg,
-            font="Arial 24",
-            height=height,
-            width=x,
-            variable=choice,
-            value=2,
-            command=choice)
-        butterflyRB=Radiobutton(aken,
-            text="Liblikas",
-            bg=bg,
-            fg=fg,
-            font="Arial 24",
-            height=height,
-            width=x,
-            variable=choice,
-            value=3,
-            command=choice)
-        solve2B=Button(aken,
-            text="Näita graafikut",
-            bg=bg,
-            fg=fg,
-            font="Arial 24",
-            height=height,
-            width=x,
-            command=solve2)
+        whaleRB=Radiobutton(aken, text = "Vaal", bg = bg, fg = fg, font = "Arial 24", height = height, width = x, variable = choice, value = 1, command = choice)
+        frogRB=Radiobutton(aken, text = "Konn", bg = bg, fg = fg, font = "Arial 24", height = height, width = x, variable = choice, value = 2, command = choice)
+        butterflyRB=Radiobutton(aken, text = "Liblikas", bg = bg, fg = fg, font = "Arial 24", height = height, width = x, variable = choice, value = 3, command = choice)
+        solve2B=Button(aken, text = "Näita graafikut", bg = bg, fg = fg, font = "Arial 24", height = height, width = x, command = solve2)
         whaleRB.pack(side="top")
         frogRB.pack(side="top")
         butterflyRB.pack(side="top")
         solve2B.pack(side="top")
     elif K==False:
         K=not K
-        extendB.config(text="Pikenda aken")
+        btn4.config(text="Pikenda aken")
         whaleRB.destroy()
         frogRB.destroy()
         butterflyRB.destroy()
@@ -265,18 +229,19 @@ tekst = "Pealkiri\n"
 
 var=IntVar()
 
-lbl=Label(aken, text = "Решение квадратного уравнения",font = "Arial 16",bg = "#f0e4c7")
-ent1=Entry(aken, font = "Arial 20",fg = "#1c4226",bg = "#f0e4c7",width = 4) 
+lbl=Label(aken, text = "Решение квадратного уравнения",font = "Arial 16",bg = bg)
+ent1=Entry(aken, font = "Arial 20",fg = fg,bg = bg,width = 4) 
 lbl2=Label(aken, text = "x**2+",font = "Arial 16")
-ent2=Entry(aken, font = "Arial 20",fg = "#1c4226",bg = "#f0e4c7",width = 4) 
+ent2=Entry(aken, font = "Arial 20",fg = fg,bg = bg,width = 4) 
 lbl3=Label(aken, text = "x+",font = "Arial 16")
-ent3=Entry(aken, font = "Arial 20",fg = "#1c4226",bg = "#f0e4c7",width = 4) 
+ent3=Entry(aken, font = "Arial 20",fg = fg,bg = bg,width = 4) 
 lbl4=Label(aken, text = "=0",font = "Arial 16")
-lbl5=Label(aken, text = "Решено",font = "Arial 16",bg = "#c7d3f0")
-btn1=Button(aken, text = "Решать",font = "Arial 12",fg = "#1c4226",bg = "#aee8be", width = 14, height = 3, relief = RAISED, command =lambda: solve())
-btn2=Button(aken, text = "graafik", font = "Arial 12", bg ="#aee8be", width = 14, height = 3, relief = RAISED, command = lambda :graafik(graf, D))
-btn3=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = "#1c4226",bg = "#aee8be",width = 14, height = 3, relief = RAISED)
-extendB=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = "#1c4226",bg = "#aee8be",width = 14, height = 3 width=x, command=extend
+lbl5=Label(aken, text = "Решено",font = "Arial 16",bg = bg)
+btn1=Button(aken, text = "Решать",font = "Arial 12",fg = fg, bg = bg, width = 14, height = 3, relief = RAISED, command =lambda: solve())
+btn2=Button(aken, text = "graafik", font = "Arial 12", bg = bg, width = 14, height = 3, relief = RAISED, command = lambda :graafik(graf, D))
+btn3=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = fg,bg = bg,width = 14, height = 3, relief = RAISED)
+btn4=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = fg,bg = bg,width = 14, height = 3, command=extend)
+
 
 lbl5.pack(side = BOTTOM)
 btn3.pack(side = BOTTOM)
@@ -289,6 +254,6 @@ ent3.pack(side = LEFT)
 lbl4.pack(side = LEFT)
 btn1.pack(side = LEFT)
 btn2.pack(side = LEFT)
-extendB.pack(side = BOTTOM)
+btn4.pack(side = BOTTOM)
 
 aken.mainloop()
