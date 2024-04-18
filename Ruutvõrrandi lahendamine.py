@@ -239,12 +239,10 @@ lbl4=Label(aken, text = "=0",font = "Arial 16")
 lbl5=Label(aken, text = "Решено",font = "Arial 16",bg = bg)
 btn1=Button(aken, text = "Решать",font = "Arial 12",fg = fg, bg = bg, width = 14, height = 3, relief = RAISED, command =lambda: solve())
 btn2=Button(aken, text = "graafik", font = "Arial 12", bg = bg, width = 14, height = 3, relief = RAISED, command = lambda :graafik(graf, D))
-btn3=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = fg,bg = bg,width = 14, height = 3, relief = RAISED)
-btn4=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = fg,bg = bg,width = 14, height = 3, command=extend)
+btn4=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = fg, bg = bg, width = 14, height = 3, command=extend)
 
 
 lbl5.pack(side = BOTTOM)
-btn3.pack(side = BOTTOM)
 lbl.pack()
 ent1.pack(side = LEFT)
 lbl2.pack(side = LEFT)
