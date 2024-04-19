@@ -244,6 +244,7 @@ btn4=Button(aken, text = "Suurenda akent", font = "Arial 12", fg = fg, bg = bg, 
 
 lbl5.pack(side = BOTTOM)
 lbl.pack()
+btn4.pack(side = BOTTOM)
 ent1.pack(side = LEFT)
 lbl2.pack(side = LEFT)
 ent2.pack(side = LEFT)
@@ -252,6 +253,6 @@ ent3.pack(side = LEFT)
 lbl4.pack(side = LEFT)
 btn1.pack(side = LEFT)
 btn2.pack(side = LEFT)
-btn4.pack(side = BOTTOM)
+
 
 aken.mainloop()
