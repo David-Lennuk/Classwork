@@ -64,6 +64,20 @@ def update_data(table_name, data):
     finally:
         conn.close()
 
+def delete_all_data():
+    conn = sqlite3.connect('library.db')
+    c = conn.cursor()
+    try:
+        c.execute("DELETE FROM Authors")
+        c.execute("DELETE FROM Genres")
+        c.execute("DELETE FROM Books")
+        conn.commit()
+        messagebox.showinfo("Успех", "Все данные успешно удалены!")
+    except sqlite3.Error as e:
+        messagebox.showerror("Ошибка", str(e))
+    finally:
+        conn.close()
+
 def display_data():
     conn = sqlite3.connect('library.db')
     c = conn.cursor()
@@ -152,6 +166,11 @@ def main():
         author_id_val = update_author_id.get()
         genre_id_val = update_genre_id.get()
         update_data('Books', (title_val, pub_date_val, author_id_val, genre_id_val, book_id_val))
+
+    def delete_all():
+        confirm = messagebox.askyesno("Подтверждение", "Вы уверены, что хотите удалить все данные?")
+        if confirm:
+            delete_all_data()
 
     root = Tk()
     root.title("Система управления библиотекой")
@@ -264,8 +283,11 @@ def main():
     update_book_button = Button(root, text="Обновить информацию о книге", command=update_book)
     update_book_button.grid(row=22, columnspan=2, padx=10, pady=10)
 
+    delete_all_button = Button(root, text="Удалить все данные", command=delete_all)
+    delete_all_button.grid(row=23, columnspan=2, padx=10, pady=10)
+
     display_button = Button(root, text="Отобразить данные", command=display_data)
-    display_button.grid(row=23, columnspan=2, padx=10, pady=10)
+    display_button.grid(row=24, columnspan=2, padx=10, pady=10)
 
     root.mainloop()
 
