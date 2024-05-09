@@ -155,7 +155,8 @@ def main():
 
     root = Tk()
     root.title("Система управления библиотекой")
-
+    root.configure(background='plum3')
+    
     # Элементы интерфейса для добавления авторов
     author_name_label = Label(root, text="Имя автора:")
     author_name_label.grid(row=0, column=0, padx=10, pady=5)
