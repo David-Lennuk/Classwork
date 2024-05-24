@@ -1,4 +1,4 @@
-"""Book store."""
+"""Book store"""
 
 
 class Book:
